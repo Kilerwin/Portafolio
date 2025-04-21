@@ -1,0 +1,43 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "",
+    title: "Anvic Store",
+    company: "Anvic",
+    description:
+      "Responsable del desarrollo frontend con React y backend con Node.js en el área de creación y visualización de productos.",
+  },
+  {
+    date: "Enero 2025",
+    title: "Orbit",
+    company: "Cinte Colombia",
+    description:
+      "Desarrollo web con Java 8 basado en Java Server Faces. Encargado de corregir errores de carga y lentitud de la plataforma, además de apoyar en la creación del módulo de cálculo de aprovisionamiento de clientes.",
+  },
+  {
+    date: "Julio 2024",
+    title: "Mi Can Veterinaria",
+    company: "Mi Can Veterinaria",
+    description:
+      "Proyecto desarrollado en React y Node.js. Responsable del manejo de roles (veterinario, estilista, cliente, administrador, auxiliar veterinario) y del desarrollo de los módulos necesarios para la gestión de los servicios prestados.",
+  },
+  {
+    date: "Agosto 2024",
+    title: "Cotizador TecnoStar",
+    company: "TecnoStar",
+    description:
+      "Desarrollo basado en HTML, CSS y JavaScript. Encargado de la lógica de selección de partes según las elecciones del cliente y del apoyo en la generación de cotizaciones en PDF.",
+  },
+]
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">                  
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-6">            
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

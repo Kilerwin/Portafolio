@@ -1,0 +1,45 @@
+---
+import Header from '../components/Header.astro'
+import '../styles/global.css'
+import '@fontsource-variable/onest';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Desarrollador Full Stack con experiencia en creación de aplicaciones web modernas. Apasionado por el diseño limpio, el código eficiente y las soluciones funcionales. Descubre mis proyectos y habilidades.">
+		<title>Portafolio Miguel Desarrollador y Programador Web con 2 años de experiencia</title>
+	</head>
+	<body>
+		<div class="relative h-full w-full bg-slate-950">
+			<div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]">
+			</div>
+			<div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]">
+			</div>
+		</div>
+		<Header/>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root{
+		color-scheme: light dark;
+	}
+	html {
+		font-family: "Onest Variable",system-ui, sans-serif;
+	}
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		background: #020617;
+		min-height: 100vh;
+	}
+</style>
