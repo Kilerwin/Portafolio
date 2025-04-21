@@ -16,15 +16,15 @@ import '@fontsource-variable/onest';
 		<title>Portafolio Miguel Desarrollador y Programador Web con 2 años de experiencia</title>
 	</head>
 	<body>
-		<div class="relative h-full w-full bg-slate-950">
-			<div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]">
-			</div>
-			<div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]">
+		<div class="relative w-full bg-slate-950">
+			<div class="pointer-events-none fixed -left-70 -top-20 z-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),transparent)]"></div>
+			<div class="pointer-events-none fixed -right-70 -top-0 z-0- h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),transparent)]"></div>
+			<div class="relative z-10">
+				<Header/>
+				<slot />
+				<Footer />
 			</div>
 		</div>
-		<Header/>
-		<slot />
-		<Footer />
 	</body>
 </html>
 

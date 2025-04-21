@@ -1,0 +1,144 @@
+---
+import TailwindIcon from "../icons/TailwindIcon.astro"
+import ReactIcon from "../icons/ReactIcon.astro"
+import NodeIcon from "../icons/NodeIcon.astro"
+import JavaIcon from "../icons/JavaIcon.astro"
+import HtmlIcon from "../icons/HtmlIcon.astro"
+import CssIcon from "../icons/CssIcon.astro"
+import JsIcon from "../icons/JsIcon.astro"
+import LinkIcon from "../icons/LinkIcon.astro"
+import LinkButton from "./LinkButton.astro"
+import GithubIcon from "../icons/GithubIcon.astro"
+
+
+const TAGS = {
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: TailwindIcon,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-[#61DAFB] text-black",
+    icon: ReactIcon,
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-[#339933] text-white",
+    icon: NodeIcon,
+  },
+  JAVA: {
+    name: "Java",
+    class: "bg-[#007396] text-white",
+    icon: JavaIcon,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-[#e34c26] text-white",
+    icon: HtmlIcon,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#264de4] text-white",
+    icon: CssIcon,
+  },
+  JS: {
+    name: "JavaScript",
+    class: "bg-[#f7df1e] text-black",
+    icon: JsIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Anvic Store",
+    image: "https://firebasestorage.googleapis.com/v0/b/dwb-archivos.appspot.com/o/AnvicStore.webp?alt=media&token=6c0fdea5-fe73-4fcd-abf4-23ffb66b26f0",
+    link: "https://anvicaccesorios.com/",
+    github: "https://github.com/Vazz2004/anvic-front-end",
+    description:
+      "Aplicación web para gestión de productos en una tienda. Permite crear, visualizar y administrar productos de forma dinámica. Desarrollado con React para el frontend y Node.js para el backend.",
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.TAILWIND],
+  },
+  {
+    title: "Orbit",
+    image: "https://firebasestorage.googleapis.com/v0/b/dwb-archivos.appspot.com/o/AnvicStore.webp?alt=media&token=6c0fdea5-fe73-4fcd-abf4-23ffb66b26f0",
+    link: "",
+    github: "",
+    description:
+      "Sistema de provisión de clientes basado en Java Server Faces. Mejora en la carga de datos y en la eficiencia de la plataforma. Proyecto desarrollado con Java 8.",
+    tags: [TAGS.JAVA],
+  },
+  {
+    title: "Mi Can Veterinaria",
+    image: "https://firebasestorage.googleapis.com/v0/b/dwb-archivos.appspot.com/o/Mi_can.webp?alt=media&token=8a274158-5503-42af-8a68-851013c15b3a",
+    link: "https://mvcfront.vercel.app/",
+    github: "https://github.com/jose-dev1/MCV",
+    description:
+      "Plataforma web para gestión integral de una veterinaria. Incluye manejo de roles y módulos para agendamiento, atención, grooming y administración. Desarrollada con React y Node.js.",
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.TAILWIND],
+  },
+  {
+    title: "Cotizador TecnoStar",
+    image: "https://firebasestorage.googleapis.com/v0/b/dwb-archivos.appspot.com/o/TecnoStart.webp?alt=media&token=2f140583-077a-400b-a458-cba3f8efd180",
+    link: "https://www.cotizador.tecnostaringenieria.com/",
+    github: "https://github.com/Vazz2004/SmartPCQuote",
+    description:
+      "Aplicación para generar cotizaciones personalizadas de partes electrónicas. Incluye selección dinámica y generación de PDF. Construida con HTML, CSS y JavaScript.",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JS],
+  },
+];
+
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt={`imagen ${title}`} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GithubIcon class="size-6" />
+              Código
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <LinkIcon class="size-4" />
+              Ver
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+
