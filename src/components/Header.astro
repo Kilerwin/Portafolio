@@ -1,11 +1,44 @@
 ---
+import ThemeToggle from "./ThemeToggle.astro"
 
 ---
-<header class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto">
-  <nav class="flex flex-row gap-x-10 opacity-80">
-    <a href="#top">Inicio</a>
-    <a href="#sobre-mi">Acerca de Mi</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#contacto">Contactame</a>
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
+  <nav class="flex px-3 text-sm font-medium rounded-full text-black dark:text-gray-200 justify-center items-center">
+      <a 
+        href="#top" 
+        class="relative px-4 py-2 dark:text-white/90 dark:hover:text-white text-black/70 hover:text-black transition-colors duration-300 rounded-lg
+               before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-0.5 
+               dark:before:bg-purple-500 before:bg-blue-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-300
+               hover:before:scale-x-100"
+      >
+        Inicio
+      </a>
+      <a 
+        href="#sobre-mi" 
+        class="relative px-4 py-2 dark:text-white/90 dark:hover:text-white text-black/70 hover:text-black transition-colors duration-300 rounded-lg
+               before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-0.5 
+               dark:before:bg-purple-500 before:bg-blue-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-300
+               hover:before:scale-x-100"
+      >
+        Sobre mí
+      </a>
+      <a 
+        href="#proyectos" 
+        class="relative px-4 py-2 dark:text-white/90 dark:hover:text-white text-black/70 hover:text-black transition-colors duration-300 rounded-lg
+               before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-0.5 
+               dark:before:bg-purple-500 before:bg-blue-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-300
+               hover:before:scale-x-100"
+      >
+        Proyectos
+      </a>
+      <a 
+        href="#contacto" 
+        class="relative px-4 py-2 dark:text-white/90 dark:hover:text-white text-black/70 hover:text-black transition-colors duration-300 rounded-lg
+               before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-0.5 
+               dark:before:bg-purple-500 before:bg-blue-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-300
+               hover:before:scale-x-100"
+      >
+        Contáctame
+      </a>
   </nav>
 </header>

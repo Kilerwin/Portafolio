@@ -1,43 +1,69 @@
 ---
-import Badge from '../components/Badge.astro';
-import Experience from '../components/Experience.astro';
-import Projects from '../components/Projects.astro';
-import SectionContainer from '../components/SectionContainer.astro';
-import Social from '../components/Social.astro';
-import Badgade from '../icons/Badgade.astro';
-import GithubIcon from '../icons/GithubIcon.astro';
-import LinkedingIcon from '../icons/LinkedingIcon.astro';
-import MailIcon from '../icons/MailIcon.astro';
-import ProyectIcon from '../icons/ProyectIcon.astro';
-import Layout from '../layouts/Layout.astro';
-
+import Badge from "../components/Badge.astro";
+import Experience from "../components/Experience.astro";
+import LinkButton from "../components/LinkButton.astro";
+import Projects from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Social from "../components/Social.astro";
+import Badgade from "../icons/Badgade.astro";
+import GithubIcon from "../icons/GithubIcon.astro";
+import LinkedingIcon from "../icons/LinkedingIcon.astro";
+import LinkIcon from "../icons/LinkIcon.astro";
+import MailIcon from "../icons/MailIcon.astro";
+import ProyectIcon from "../icons/ProyectIcon.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
 	<main class="px-4">
 		<SectionContainer class="w-full lg:w-[740px] mx-auto pt-32 pb-16">
-			<img class="rounded-full w-12 h-12 mb-2" src="/src/assets/Logo.png" alt="Logo">
-			<h1 class="text-white text-3xl lg:text-5xl md:text-4xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hey, soy Miguel <a href="https://www.linkedin.com/in/miguel-mora-fullstack-developer/" target="_blank" rel="noopener" class="flex justify-center items-center"><Badge>Disponible para contratar</Badge></d></h1>
-			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">+2 años de experiencia. Desarrollador Full Stack. De Bogota Colombia.Especializado en crear nuevas experiencias.</h2>
-			<section class="flex gap-4 mt-8 flex-wrap ">
-				<Social href="https://github.com/Kilerwin">
+			<img
+				class="rounded-full w-12 h-12 mb-2"
+				src="/src/assets/Logo.png"
+				alt="Logo"
+			/>
+			<h1
+				class="dark:text-white text-gray-800 text-3xl lg:text-5xl md:text-4xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+			>
+				Hey, soy Miguel <a
+					href="https://www.linkedin.com/in/miguel-mora-fullstack-developer/"
+					target="_blank"
+					rel="noopener"
+					class="flex justify-center items-center"
+					><Badge>Disponible para contratar</Badge></a
+				>
+			</h1>
+			<h2
+				class="text-xl lg:text-2xl dark:text-white dark:opacity-80 text-gray-700 text-wrap max-w-[700px]"
+			>
+				+2 años de experiencia. Desarrollador Full Stack. De Bogota
+				Colombia.Especializado en crear nuevas experiencias.
+			</h2>
+			<section class="flex gap-4 mt-8 flex-wrap">
+				<LinkButton href="https://github.com/Kilerwin">
 					<GithubIcon class="size-4 md:w-6 lg:h-6" />
-				</Social>
-				<Social href="https://www.linkedin.com/in/miguel-mora-fullstack-developer/">
+					Conoce mis codigos
+				</LinkButton>
+				<LinkButton href="https://www.linkedin.com/in/miguel-mora-fullstack-developer/">
 					<LinkedingIcon class="size-4 md:w-6 lg:h-6" />
-				</Social>
-				<Social href="mailto:Miguel64_2017@hotmail.com">
-					<MailIcon class="size-4 md:w-6 lg:h-6" /> Miguel64_2017@hotmail.com
-				</Social>
+					Conoce mas de mi
+				</LinkButton>
+				<LinkButton href=href="mailto:Miguel64_2017@hotmail.com">
+					<MailIcon class="size-4 md:w-6 lg:h-6" /> Contactame
+				</LinkButton>
 			</section>
 		</SectionContainer>
 		<div class="space-y-24">
 			<SectionContainer id="proyectos">
-				<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center"><Badgade class="w-6 h-6"/>Experiencia Laboral</h2>
+				<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center dark:text-white text-gray-700">
+					<Badgade class="w-6 h-6 " />Experiencia Laboral
+				</h2>
 				<Experience />
 			</SectionContainer>
 			<SectionContainer id="proyectos">
-				<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center"><ProyectIcon class="w-6 h-6"/> Proyectos</h2>
+				<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+					<ProyectIcon class="w-6 h-6" /> Proyectos
+				</h2>
 				<Projects />
 			</SectionContainer>
 		</div>
