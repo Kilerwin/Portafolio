@@ -1,28 +1,47 @@
 ---
-const currentYear = new Date().getFullYear()
+import GithubIcon from "../icons/GithubIcon.astro";
+import MailIcon from "../icons/MailIcon.astro";
+
+const currentYear = new Date().getFullYear();
 ---
 
-<footer
-  class="opacity-80 m-4 min-[375px]:pl-4 md:pl-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
->
+
+<footer class="bg-white ">
   <div
-    class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
+    class="px-2 py-4 bg-gray-100 dark:bg-gray-900 md:flex md:items-center md:justify-between"
   >
-    <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
-      >© {currentYear}
-      <a href="https://midu.dev/" class="hover:underline">Miguel Mora</a>
-    </span>
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
+    <span
+      class="flex items-center gap-2 text-sm text-zinc-800/90 dark:text-zinc-200/90 sm:text-center"
     >
-      <li>
-        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
-      </li>
-      <li>
-        <a id="contacto" href="mailto:Miguel64_2017@hotmail.com" class="hover:underline"
-          >Contacto</a
-        >
-      </li>
-    </ul>
+      <img
+        class="size-16 p-1 rounded-full object-cover"
+        src="https://firebasestorage.googleapis.com/v0/b/dwb-archivos.appspot.com/o/Sin%20t%C3%ADtulo.png?alt=media&token=1717fdd7-3b58-41e8-8632-51adc0ea2fd1"
+        alt="Avatar"
+      />
+      <span>
+        © {currentYear}
+        <a href="#top" class="hover:underline ml-1">Miguel Mora</a>
+      </span>
+    </span>
+    <div
+      class="flex mt-4 pb-10 md:pb-0 md:mt-0 gap-5 rtl:space-x-reverse"
+    >
+      <a
+        target="_blank"
+        href="https://github.com/Kilerwin"
+        class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+        aria-label="GitHub account"
+      >
+        <GithubIcon class="w-6 h-6" />
+      </a>
+      <a
+        target="_blank"
+        href="mailto:Kilerwin@hotmail.com"
+        class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+        aria-label="Correo electrónico"
+      >
+        <MailIcon class="w-6 h-6" />
+      </a>
+    </div>
   </div>
 </footer>
