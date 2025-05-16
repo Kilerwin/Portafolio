@@ -4,7 +4,6 @@ import Experience from "../components/Experience.astro";
 import LinkButton from "../components/LinkButton.astro";
 import Projects from "../components/Projects.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import Social from "../components/Social.astro";
 import Badgade from "../icons/Badgade.astro";
 import GithubIcon from "../icons/GithubIcon.astro";
 import LinkedingIcon from "../icons/LinkedingIcon.astro";
@@ -16,7 +15,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
 	<main class="px-4">
-		<SectionContainer class="w-full lg:w-[740px] mx-auto pt-32 pb-16" id="inicio">
+		<SectionContainer class="w-full lg:w-[740px] mx-auto pt-5 md:pt-15 lg:pt-20" id="inicio">
 			<img
 				class="size-18 p-1 rounded-full ring-2 ring-blue-300 dark:ring-purple-500 object-cover"
 				src="https://firebasestorage.googleapis.com/v0/b/dwb-archivos.appspot.com/o/Foto.png?alt=media&token=bc4a05a1-7714-46a1-997b-670f315e0ac4"
@@ -39,19 +38,22 @@ import Layout from "../layouts/Layout.astro";
 				+2 años de experiencia. Desarrollador Full Stack. De Bogota
 				Colombia.Especializado en crear nuevas experiencias.
 			</h2>
-			<section class="flex gap-4 mt-8 flex-wrap">
+			<section class="md:flex gap-4 mt-8 text-center grid grid-cols-2 md:flex-row">
 				<LinkButton href="https://github.com/Kilerwin">
 					<GithubIcon class="size-4 md:w-6 lg:h-6" />
-					Conoce mis codigos
+					Mis codigos
 				</LinkButton>
 				<LinkButton
 					href="https://www.linkedin.com/in/miguel-mora-fullstack-developer/"
 				>
 					<LinkedingIcon class="size-4 md:w-6 lg:h-6" />
-					Conoce mas de mi
+					Conoceme
 				</LinkButton>
 				<LinkButton href='href="mailto:Miguel64_2017@hotmail.com"'>
 					<MailIcon class="size-4 md:w-6 lg:h-6" /> Contactame
+				</LinkButton>
+				<LinkButton href="https://firebasestorage.googleapis.com/v0/b/dwb-archivos.appspot.com/o/CV%20Miguel%20Mora%20desarollador%20fullstack.pdf?alt=media&token=49a90fad-779a-4b08-811b-1385a2992b5b">
+					<LinkIcon class="size-4 md:w-6 lg:h-6" /> Mi CV
 				</LinkButton>
 			</section>
 		</SectionContainer>
