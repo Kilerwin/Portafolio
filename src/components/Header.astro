@@ -1,44 +1,103 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro"
-
+import ThemeToggle from "./ThemeToggle.astro";
 ---
-<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
-  <nav class="flex px-3 text-sm font-medium rounded-full text-black dark:text-gray-200 justify-center items-center">
-      <a 
-        href="#top" 
-        class="relative px-4 py-2 dark:text-white/90 dark:hover:text-white text-black/70 hover:text-black transition-colors duration-300 rounded-lg
-               before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-0.5 
+
+<header
+class=" flex items-center justify-center w-full mt-2"
+>
+<nav
+  id="navbar"
+  class="fixed bottom-0 md:top-0 md:bottom-auto z-10 flex px-3 text-sm font-medium rounded-full text-black dark:text-gray-200 justify-center items-center 
+         transition backdrop-blur-lg overflow-hidden"
+>
+
+    <a
+      href="#experiencia"
+      class="relative px-4 py-2 dark:text-white/90 dark:hover:text-white text-black/70 hover:text-black transition-colors duration-300 rounded-lg
+               before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-0.5
                dark:before:bg-purple-500 before:bg-blue-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-300
-               hover:before:scale-x-100"
-      >
-        Inicio
-      </a>
-      <a 
-        href="#sobre-mi" 
-        class="relative px-4 py-2 dark:text-white/90 dark:hover:text-white text-black/70 hover:text-black transition-colors duration-300 rounded-lg
-               before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-0.5 
+               hover:before:scale-x-100 nav-link"
+    >
+      Experiencia
+    </a>
+    <a
+      href="#sobre-mi"
+      class="relative px-4 py-2 dark:text-white/90 dark:hover:text-white text-black/70 hover:text-black transition-colors duration-300 rounded-lg
+               before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-0.5
                dark:before:bg-purple-500 before:bg-blue-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-300
-               hover:before:scale-x-100"
-      >
-        Sobre mí
-      </a>
-      <a 
-        href="#proyectos" 
-        class="relative px-4 py-2 dark:text-white/90 dark:hover:text-white text-black/70 hover:text-black transition-colors duration-300 rounded-lg
-               before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-0.5 
+               hover:before:scale-x-100 nav-link"
+    >
+      Sobre mí
+    </a>
+    <a
+      href="#proyectos"
+      class="relative px-4 py-2 dark:text-white/90 dark:hover:text-white text-black/70 hover:text-black transition-colors duration-300 rounded-lg
+               before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-0.5
                dark:before:bg-purple-500 before:bg-blue-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-300
-               hover:before:scale-x-100"
-      >
-        Proyectos
-      </a>
-      <a 
-        href="#contacto" 
-        class="relative px-4 py-2 dark:text-white/90 dark:hover:text-white text-black/70 hover:text-black transition-colors duration-300 rounded-lg
-               before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-0.5 
+               hover:before:scale-x-100 nav-link"
+    >
+      Proyectos
+    </a>
+    <a
+      href="#contacto"
+      class="relative px-4 py-2 dark:text-white/90 dark:hover:text-white text-black/70 hover:text-black transition-colors duration-300 rounded-lg
+               before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-0.5
                dark:before:bg-purple-500 before:bg-blue-400 before:scale-x-0 before:origin-left before:transition-transform before:duration-300
-               hover:before:scale-x-100"
-      >
-        Contáctame
-      </a>
+               hover:before:scale-x-100 nav-link"
+    >
+      Contáctame
+    </a>
   </nav>
 </header>
+
+<script>
+  // Este script se ejecutará solo en el navegador
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", () => {
+      const navbar = document.getElementById("navbar");
+      if (window.scrollY > 10) {
+        navbar?.classList.add(
+          "bg-white/40",
+          "dark:bg-gray-900/40",
+          "shadow-md",
+        );
+      } else {
+        navbar?.classList.remove(
+          "bg-white/40",
+          "dark:bg-gray-900/40",
+          "shadow-md",
+        );
+      }
+    });
+  }
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute("id");
+          const link = document.querySelector(`.nav-link[href="#${id}"]`);
+
+          if (entry.isIntersecting) {
+            navLinks.forEach((el) => {
+              el.classList.remove("dark:text-purple-500", "text-blue-500");
+              el.classList.add("dark:text-white/90");
+            });
+            link?.classList.remove("dark:text-white/90");
+            link?.classList.add("dark:text-purple-500", "text-blue-500");
+          }
+        });
+      },
+      {
+        threshold: 0.6,
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  });
+</script>
