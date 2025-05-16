@@ -29,7 +29,7 @@ const TAGS = {
   },
   JAVA: {
     name: "Java",
-    class: "bg-[#007396] text-white",
+    class: "bg-[#d9d9d9] text-black",
     icon: JavaIcon,
   },
   HTML: {
@@ -60,7 +60,7 @@ const PROJECTS = [
   },
   {
     title: "Orbit",
-    image: "https://firebasestorage.googleapis.com/v0/b/dwb-archivos.appspot.com/o/AnvicStore.webp?alt=media&token=6c0fdea5-fe73-4fcd-abf4-23ffb66b26f0",
+    image: "https://firebasestorage.googleapis.com/v0/b/dwb-archivos.appspot.com/o/713shots_so.webp?alt=media&token=0648b2e7-4dfe-44f9-a818-2f6148284d1f",
     link: "",
     github: "",
     description:
@@ -107,10 +107,10 @@ const PROJECTS = [
           {tags.map((tag) => (
             <li>
               <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-2 px-3 `}
               >
-                <tag.icon class="size-4" />
-                {tag.name}
+                <tag.icon class="size-5" />
+                <p class="mt-0.5">{tag.name}</p>
               </span>
             </li>
           ))}
